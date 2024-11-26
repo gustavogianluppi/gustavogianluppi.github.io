@@ -1,7 +1,28 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+    <head>
+        <title>Rumo.on - Termos de serviço</title>
+        <script>
+            function getQueryParam(param) {
+              const urlParams = new URLSearchParams(window.location.search);
+              return urlParams.get(param);
+            }
+        
+            function redirectToDocument() {
+              const docId = getQueryParam("id");
+              if (docId) {
+                window.location.href = `https://drive.google.com/file/d/${docId}/view`;
+              } else {
+                alert("Erro: Nenhum documento especificado.");
+              }
+            }
+        </script>
+    </head>
+    <body style="background-color: #272727;">
+        <div style="text-align: center; color: white;">
+            <h1>Termos de serviço:</h1>
+            <p>Ao pressionar o botão abaixo, você concorda com os termos e regras que acabou de ler.</p>
+            <button style="width: 150px; height: 30px; text-align: center; background-color: greenyellow; color: black;" onclick="redirectToDocument()">Aceito os termos</button>
+        </div>
+    </body>
 </html>
